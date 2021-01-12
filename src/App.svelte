@@ -1,13 +1,18 @@
 <script>
-	export let name;
+	import Hello from './Hello.svelte'
+	import { storeName } from './store.js'
+
+	let name
+
+	const end = () => {
+		$storeName = name;
+	}
 </script>
 
-<div class="hello">
-	{name}
-</div>
+<input type="text" bind:value={name} />
+<button on:click={end}>엔터</button>
+
+<Hello />
 
 <style>
-	.hello {
-		background: rgb(245, 245, 245);
-	}
 </style>
