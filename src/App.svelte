@@ -1,6 +1,8 @@
 <script>
-	import Hello from './Hello.svelte'
 	import { storeName } from './store.js'
+	import Router from 'svelte-spa-router'
+	import routes from './routes'
+	import { link } from 'svelte-spa-router'
 
 	let name
 
@@ -11,8 +13,9 @@
 
 <input type="text" bind:value={name} />
 <button on:click={end}>엔터</button>
+<a use:link href="/another">asd</a>
 
-<Hello />
+<Router {routes} />
 
 <style>
 </style>
